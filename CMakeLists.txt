@@ -12,14 +12,14 @@ include(FetchContent)
 FetchContent_Declare(
     springbootplusplus-web
     GIT_REPOSITORY https://github.com/compilerNayan/arduinolib2.git
-    GIT_TAG        dev
+    GIT_TAG        main
 )
 
 # Fetch springbootplusplus-data
 FetchContent_Declare(
     springbootplusplus-data
     GIT_REPOSITORY https://github.com/compilerNayan/arduinolib3.git
-    GIT_TAG        dev
+    GIT_TAG        main
 )
 
 FetchContent_MakeAvailable(springbootplusplus-web springbootplusplus-data)
