@@ -55,13 +55,13 @@ class SpringBootCppApp : public ISpringBootCppApp {
         }
         
         // Retrieve incoming requests
-        Bool requestRetrieved = requestManager->RetrieveRequest();
+        requestManager->RetrieveRequest();
         
         // Process requests
-        Bool requestProcessed = requestManager->ProcessRequest();
+        requestManager->ProcessRequest();
         
         // Process responses
-        Bool responseProcessed = requestManager->ProcessResponse();
+        requestManager->ProcessResponse();
     }
 };
 
