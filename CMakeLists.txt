@@ -32,6 +32,12 @@ set_target_properties(arduinolib4 PROPERTIES
     VERSION ${PROJECT_VERSION}
 )
 
+# Set include directories for arduinolib4's own headers (in root directory)
+target_include_directories(arduinolib4 INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    $<INSTALL_INTERFACE:include>
+)
+
 # Link to springbootplusplus-web
 # Try the namespaced target first, fallback to non-namespaced
 if(TARGET springbootplusplus-web::springbootplusplus-web)
