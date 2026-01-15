@@ -32,9 +32,9 @@ set_target_properties(arduinolib4 PROPERTIES
     VERSION ${PROJECT_VERSION}
 )
 
-# Set include directories for arduinolib4's own headers (in root directory)
+# Set include directories for arduinolib4's own headers (in src directory)
 target_include_directories(arduinolib4 INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
     $<INSTALL_INTERFACE:include>
 )
 
