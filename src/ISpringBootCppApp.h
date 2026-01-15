@@ -3,7 +3,7 @@
 
 #include <StandardDefines.h>
 
-DefineStandardPointers(ISpringBootApp)
+DefineStandardPointers(ISpringBootCppApp)
 class ISpringBootCppApp {
     Public Virtual ~ISpringBootCppApp() = default;
 
