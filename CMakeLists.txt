@@ -22,7 +22,14 @@ FetchContent_Declare(
     GIT_TAG        main
 )
 
-FetchContent_MakeAvailable(springbootplusplus-web springbootplusplus-data)
+# Fetch cpp-logger (arduinolib6)
+FetchContent_Declare(
+    cpp-logger
+    GIT_REPOSITORY https://github.com/compilerNayan/arduinolib6.git
+    GIT_TAG        main
+)
+
+FetchContent_MakeAvailable(springbootplusplus-web springbootplusplus-data cpp-logger)
 
 # Create header-only library (INTERFACE library)
 add_library(arduinolib4 INTERFACE)
@@ -66,6 +73,22 @@ else()
     if(springbootplusplus-data_SOURCE_DIR)
         target_include_directories(arduinolib4 INTERFACE
             $<BUILD_INTERFACE:${springbootplusplus-data_SOURCE_DIR}/src>
+        )
+    endif()
+endif()
+
+# Link to cpp-logger (arduinolib6)
+# Try the namespaced target first, fallback to non-namespaced
+if(TARGET cpp-logger::cpp-logger)
+    target_link_libraries(arduinolib4 INTERFACE cpp-logger::cpp-logger)
+elseif(TARGET cpp-logger)
+    target_link_libraries(arduinolib4 INTERFACE cpp-logger)
+else()
+    # Fallback: manually add include directory if target doesn't exist
+    FetchContent_GetProperties(cpp-logger)
+    if(cpp-logger_SOURCE_DIR)
+        target_include_directories(arduinolib4 INTERFACE
+            $<BUILD_INTERFACE:${cpp-logger_SOURCE_DIR}/src>
         )
     endif()
 endif()

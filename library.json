@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "springbootplusplus-web": "https://github.com/compilerNayan/arduinolib2.git",
-    "springbootplusplus-data": "https://github.com/compilerNayan/arduinolib3.git"
+    "springbootplusplus-data": "https://github.com/compilerNayan/arduinolib3.git",
+    "cpp-logger": "https://github.com/compilerNayan/arduinolib6.git"
   },
   "license": "MIT",
   "homepage": "",
